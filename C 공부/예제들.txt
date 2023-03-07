@@ -1,0 +1,373 @@
+-----------------------------------------------------------------< 구조체 예제 >-----------------------------------------------------------
+#include <stdio.h>
+
+struct hobby // 구조체 전역으로 사용
+	{
+		char bill[5];
+		char boll[10];
+	};
+
+struct birth // 구조체 안에 함수 넣기
+{
+	int yy, mm, dd;
+
+	void birth_y() { yy; }
+	void birth_m() { mm; }
+	void birth_d() { dd; }
+};
+void average(hobby *m, int bill_avr, int boll_aver);
+
+int main(void)
+{
+	typedef char string[]; // 구조체 사용
+	typedef int num;
+
+	struct point // 구조체 사용
+	{
+		char x[10];
+		char y[10];
+		int z;
+	};
+
+	string name = "양세민";
+	num age = 20;
+
+	point p = { "서초구", "서초", 1};
+	hobby b = { "당구", "볼링" };
+
+	hobby *ptr_b = &b; // 구조체의 주소 값을 포인터를 사용해 가져옴
+
+	birth day = { 2004, 05, 14 };
+	day.birth_y();
+	day.birth_m();
+	day.birth_d();
+
+	printf("이름 : %s\n", name);
+	printf("나이 : %d\n", age);
+	printf("생년월일 : %d. %02d. %d\n", day.yy, day.mm, day.dd);
+	printf("주소 : %s %s%d동\n", p.x, p.y, p.z); // 구조체 안의 변수를 ( . )을 사용해 구별해서 가져옴
+	printf("취미 : %s, %s\n", ptr_b->bill, ptr_b->boll); // 구조체 안의 변수의 주소 값을 ( -> )을 사용해 구별해서 가져옴
+	average(&b, 200, 150);
+}
+
+void average(hobby* m, int bill_avr, int boll_aver) // 구조체 포인터를 함수 파라미터로 사용
+{
+	printf("에버리지 : %s = %d, %s = %d\n", m->bill, bill_avr, m->boll, boll_aver);
+}
+-----------------------------------------------------------------< 1차원 배열 매개변수로 넘기기예제 >---------------------------------------------------
+#include <stdio.h>
+
+void printarry(int arr[4]);
+
+int main(void)
+{
+	int arr[4] = { 1, 2, 3, 4 };
+
+	printarry(arr);
+
+	for (int i = 0; i < 4; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+
+	return 0;
+}
+
+void printarry(int arr[4])
+{
+	for (int i = 0; i < 4; i++)
+	{
+		arr[i] *= 2;
+	}
+}
+-----------------------------------------------------------------< 재귀 함수 예제 >----------------------------------------------------
+#include <stdio.h>
+
+int recusion(int a);
+
+int main(void)
+{
+	int a;
+	
+	printf("팩토리얼 할 값을 입력하시오. : ");
+	scanf_s("%d", &a);
+	printf("%d! = %d\n", a, recusion(a));
+	return 0;
+}
+
+int recusion(int a)
+{
+	if (a == 1) return 1;
+	
+	return a * recusion(a - 1);
+}
+-----------------------------------------------------------------< 배열 매개변수로 넘기기 예제 >-----------------------------------------------------------
+#include <stdio.h>
+
+int arr_function(int arr[2][3]);
+
+int main()
+{
+	int arr[2][3] = 
+	{ {1, 2, 3}, 
+	{4, 5, 6} };
+
+	arr_function(arr);
+}
+
+int arr_function(int arr[2][3])
+{
+
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d", arr[i][j]);
+		}
+		printf("\n");
+	}
+
+	return 0;
+}
+-----------------------------------------------------------------------< 반환 함수 예제 >------------------------------------------------------------------
+#include <stdio.h>
+#include <windows.h>
+
+void coller();
+int number_sum(int b);
+int number_multiply(int c);
+
+int main(void)
+{
+	int a;
+	int result;
+
+	coller();
+
+	printf("숫자를 입력하세요. : ");
+	scanf_s("%d", &a);
+
+	Sleep(2000);
+	result = number_sum(a);
+
+	Sleep(2000);
+	number_multiply(result);
+
+	return 0;
+}
+
+void coller()
+{
+	printf("----------------------start-------------------\n\n");
+}
+
+int number_sum(int b)
+{
+	int sum = 0;
+	printf("숫자 %d를 반환 받았습니다.\n", b);
+	for (int i = 1; i <= b; i++)
+	{
+		sum = sum + i;
+	}
+	printf("반환 받은 숫자 %d의 총 합은 %d입니다.\n\n", b, sum);
+
+	return sum;
+}
+
+int number_multiply(int c)
+{
+	int multiply;
+
+	printf("반환 받은 값은 %d입니다.\n", c);
+	printf("반환 값과 곱하고자 하는 값을 입력하시오. : ");
+	scanf_s("%d", &multiply);
+
+	Sleep(2000);
+	printf("반환 받은 값을 곱하면 %d * %d = %d 입니다.\n", c, multiply, c * multiply);
+
+	multiply = c * multiply;
+
+	return (multiply);
+}
+-----------------------------------------------------------------------< 랜덤 예제 >----------------------------------------------------------------------- 
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	int a = rand() % 50;
+	int b = 5;
+	int c;
+
+	printf("숫자 : %d\n", a);
+	while (b > 0)
+	{
+		printf("남은 기회 %d\n", b--);
+		printf("숫자를 맞혀보세요 (1~50) : ");
+		scanf_s("%d", &c);
+
+		if (c > a)
+		{
+			printf("down\n\n");
+		}
+		else if (c < a)
+		{
+			printf("up\n\n");
+		}
+		else if (c == a)
+		{
+			printf("\n\n정답입니다 !\n\n");
+			break;
+		}
+		else if (b == 0)
+		{
+			printf("기회가 모두 소진 되었습니다.");
+			break;
+		}
+	}
+
+	return 0;
+}
+
+-----------------------------------------------------------------< 비밀번호 풀기 예제 >------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int getRandomNumber(int level);
+void showQuestion(int level, int num1, int num2);
+void success();
+void fail();
+
+int main(void)
+{
+	srand(time(NULL));
+	int count = 0;
+	for (int i = 1; i < 5; i++)
+	{
+		int num1 = getRandomNumber(i);
+		int num2 = getRandomNumber(i);
+
+		showQuestion(i, num1, num2);
+
+		int answer = -1;
+		scanf_s("%d", &answer);
+		if (answer == -1)
+		{
+			printf("프로그램을 종료합니다.");
+			exit(0);
+		}
+		else if(answer == num1 * num2)
+		{
+			success();
+			count++;
+		}
+		else
+		{
+			fail();
+		}
+	}
+
+	printf("\n\n당신은 5개의 비밀번호 중 %d 개를 맞혔습니다.\n", count);
+	return 0;
+}
+
+int getRandomNumber(int level)
+{
+	return rand() % (level * 7) + 1;
+}
+
+void showQuestion(int level, int num1, int num2)
+{
+	printf("\n\n\n###### %d 번째 비밀번호 ######\n", level);
+	printf("\n\t%d X %d 는?\n\n", num1, num2);
+	printf("##############################\n");
+	printf("\n비밀번호를 입력하세요 (종료 : -1) >> ");
+}
+
+void success()
+{
+	printf("정답입니다");
+}
+
+void fail()
+{
+	printf("오답입니다.");
+}
+
+----------------------------------------------------------------------< 발모제 예제 >---------------------------------------------------------------------
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+	srand(time(NULL));
+	printf("\n\n === 아빠는 대머리 게임 === \n\n");
+	int answer;
+	int treatmaent = rand() % 4;
+
+	int cntShowBottle = 0;
+	int prevCntShowBottle = 0;
+
+	for (int i = 1; 1 <= 3; i++)
+	{
+		int bottle[4] = { 0,0,0,0 };
+		do {
+			cntShowBottle = rand() % 2 + 2;
+		} while (cntShowBottle == prevCntShowBottle);
+		prevCntShowBottle = cntShowBottle;
+
+		int islncluded = 0;
+		printf(" > %d 번째 시도 : ", i);
+
+		for (int j = 0; j < cntShowBottle; j++)
+		{
+			int randBottle = rand() % 4;
+
+			if (bottle[randBottle] = 1)
+			{
+				bottle[randBottle] = 1;
+				if (randBottle == treatmaent)
+				{
+					islncluded = 1;
+				}
+			}
+			else
+			{
+				j--;
+			}
+		}
+		for (int k = 0; k < 4; k++)
+		{
+			if (bottle[k] == 1)
+				printf("%d", k + 1);
+		}
+		printf(" 물약을 머리에 바릅니다.\n\n");
+
+		if (islncluded == 1)
+		{
+			printf(" >> 성공 ! 머리가 났어요 !!\n");
+		}
+		else
+		{
+			printf(" >> 실패 ! 머리가 나지 않았어요...\n");
+		}
+
+		printf("\n 계속 하여면 아무키나 누르세요 ...");
+		getchar();
+	}
+
+	printf("\n\n 발모제는 몇번일까요?");
+	scanf_s("%d", &answer);
+
+	if (answer == treatmaent + 1)
+	{
+		printf("\n >> 정답입니다.!\n");
+	}
+	else
+	{
+		printf("\n >> 땡 ! 틀렸어요. 정답은 %d 입니다\n", treatmaent + 1);
+	}
+	return 0;
+}

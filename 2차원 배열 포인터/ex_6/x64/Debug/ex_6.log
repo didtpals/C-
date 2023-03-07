@@ -1,0 +1,8 @@
+﻿  ex_6-4.c
+C:\Users\MOA\Desktop\C언어\ex_6\ex_6\ex_6-4.c(15,11): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
+C:\Users\MOA\Desktop\C언어\ex_6\ex_6\ex_6-4.c(15,11): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\MOA\Desktop\C언어\ex_6\ex_6\ex_6-4.c(26,11): warning C4477: 'printf' : 서식 문자열 '%d'에 'int' 형식의 인수가 필요하지만 variadic 인수 1의 형식이 'int *'입니다.
+C:\Users\MOA\Desktop\C언어\ex_6\ex_6\ex_6-4.c(26,11): warning C4313: 'printf': 서식 문자열의 '%d'이(가) int *' 형식의 인수 1과(와) 충돌합니다.
+C:\Users\MOA\Desktop\C언어\ex_6\ex_6\ex_6-4.c(8,19): warning C4047: '초기화 중': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+C:\Users\MOA\Desktop\C언어\ex_6\ex_6\ex_6-4.c(8,28): warning C4047: '초기화 중': 'int *'의 간접 참조 수준이 'int'과(와) 다릅니다.
+  ex_6.vcxproj -> C:\Users\MOA\Desktop\C언어\ex_6\x64\Debug\ex_6.exe

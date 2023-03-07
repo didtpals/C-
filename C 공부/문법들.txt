@@ -1,0 +1,29 @@
+-------------------------------------------------------------------------< 문법 정리 >---------------------------------------------------------------------
+	// printf( ) = 출력
+	// scanf("", &변수) = 키보드 입력
+	// int(%d) = 정수형
+	// long int(%ld) = 더 큰 범위의 정수형
+	// char(%c) = 문자
+	// char[n](%s) = 문자열 : 문자열은 NULL값이 들어가기 때문에 \0을 고려해야함.
+	// float(%f) = 실수형
+	// double(%lf) = 더 큰 범위의 실수형
+	// a++ = a+1
+	// ++a = 1+a
+	// 반복문 = for, while, do while
+	// for(선언; 조건; 증감) { } : ex) for(int i = 0; i < 100; i++){ }
+	// while(조건) { 실행문 }
+	// do { } while(조건);
+	// if(조건) { } else if { }
+	// break = 탈출
+	// continue = 시작으로 돌아감
+	// && = AND(그리고)
+	// || = OR(또는)
+	// srand(time(NULL)) = 난수 초기화
+	// switch(값) { case n : 코드; break; default; }
+	// 함수 = 맨 위에 선언(프로토타입), main() 나와서 선언 함수 정의, 정의된 함수 main()에서 호출
+	// 함수 작성법 = 리턴값 함수명(파라미터(전달값)) { }
+	// -- 함수 종류 --
+	// 반환 값이 없는 함수 = function_without_return() : return 없음
+	// 반환 값이 있는 함수 = function_with_return() : return 있음
+	// 전달 값이 없는 함수 = function_without_params()
+	// 전달 값이 있는 함수 = function_without_params(int a, char b, float c)

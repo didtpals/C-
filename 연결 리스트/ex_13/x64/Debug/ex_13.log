@@ -1,0 +1,6 @@
+﻿  ex_13-1.c
+C:\Users\MOA\Desktop\C언어\ex_13\ex_13\ex_13-1.c(27,21): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\MOA\Desktop\C언어\ex_13\ex_13\ex_13-1.c(29,23): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\MOA\Desktop\C언어\ex_13\ex_13\ex_13-1.c(43,21): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+C:\Users\MOA\Desktop\C언어\ex_13\ex_13\ex_13-1.c(62,20): warning C4133: '=': 'Node *'과(와) 'Node *' 사이의 형식이 호환되지 않습니다.
+  ex_13.vcxproj -> C:\Users\MOA\Desktop\C언어\ex_13\x64\Debug\ex_13.exe

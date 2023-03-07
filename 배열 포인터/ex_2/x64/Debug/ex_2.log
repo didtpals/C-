@@ -1,0 +1,5 @@
+﻿  test_2-2.cpp
+  test_2.cpp
+C:\Users\MOA\Desktop\C언어\ex_2\ex_2\test_2.cpp(9,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'Calendar' 왼쪽은 무시됩니다.
+  코드를 생성하고 있습니다...
+  ex_2.vcxproj -> C:\Users\MOA\Desktop\C언어\ex_2\x64\Debug\ex_2.exe
